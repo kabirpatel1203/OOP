@@ -1,0 +1,33 @@
+# Class:
+    # A class is like a blueprint or a template for creating objects.
+    # It defines a set of attributes (characteristics) and methods (actions) that the objects created from the class will have.
+    # Think of a class as a general category or a prototype.
+
+# Object: 
+    # An object is an instance of a class. It's a specific realization or occurrence of the class.
+    # Objects have specific values for their attributes and can perform actions using the methods defined in the class.
+    # Think of an object as a concrete thing that you create based on the blueprint provided by a class.
+
+# Inheritance:
+    # the lower one is called derived class and upper one is called base class. If you include super then the init variable(instance varibales can also be inherited.)
+    # breath is class attribute and self.breath is instance attribute. Instance attribute changes based on the instance. class attr. is fixed.
+    # if you have multiple inheritance where one derived class has two base class and also both base class has same methods, then it follows MRO, in which left most class will be counted.
+
+# Encapsulation
+# Polymorphism
+# Abstraction
+# Composition
+
+# Method Overloading - 
+    # Method overloading refers to defining multiple methods in the same class with the same name but different parameters.
+    # It allows a class to have multiple methods with the same name but different parameter types or a different number of parameters.
+    # Parameter Types or Number of Parameters: In method overloading, the method name remains the same, but the parameters must be different (either in types or number).
+    # Within the Same Class: Overloaded methods are defined within the same class.
+    # Compile-Time Polymorphism: Method overloading is an example of compile-time polymorphism (also known as static polymorphism or early binding) because the decision about which method to call is made at compile-time.
+
+# Method Overriding:
+    Method overriding occurs when a subclass provides a specific implementation for a method that is already defined in its superclass.
+    The overridden method in the subclass has the same signature (name and parameters) as the method in the superclass.
+    Same Method Signature: In method overriding, the method in the subclass has the same signature (name and parameters) as the method in the superclass.
+    Inheritance: Overriding methods are associated with inheritance, where a subclass inherits a method from its superclass and provides its own implementation.
+    Run-Time Polymorphism: Method overriding is an example of run-time polymorphism (also known as dynamic polymorphism or late binding) because the decision about which method to call is made at runtime.
