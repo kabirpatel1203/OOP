@@ -13,11 +13,21 @@
     # breath is class attribute and self.breath is instance attribute. Instance attribute changes based on the instance. class attr. is fixed.
     # if you have multiple inheritance where one derived class has two base class and also both base class has same methods, then it follows MRO, in which left most class will be counted.
 
-# Encapsulation
-# Polymorphism
-# Abstraction
-# Composition
+# Encapsulation - Encapsulation is one of the fundamental principles of object-oriented programming (OOP) that involves bundling the data (attributes) and methods (functions) that operate on the data into a single unit called a class. It restricts direct access to some of an object's components and can prevent the accidental modification of data. Encapsulation helps in hiding the internal details of an object and exposing only what is necessary.
+    Private Attributes and Methods:
+        Attributes and methods can be marked as private by using a naming convention or specific language features (e.g., in Python, a single leading underscore _ indicates a private attribute or method).
+        Private attributes and methods are meant to be accessed only within the class.
+    Accessors (Getter Methods) and Mutators (Setter Methods):
+        Instead of directly accessing or modifying the private attributes, you use accessor (getter) and mutator (setter) methods.
+        Accessors allow you to retrieve the values of private attributes.
+        Mutators allow you to modify the values of private attributes, often with additional validation or logic.
+    
+    In this example, the BankAccount class has two instance attributes: _account_number (protected) and __balance (private). The _account_number attribute can be accessed within the class and its subclasses, but it is convention to treat it as read-only from outside the class. The __balance attribute is truly private and cannot be accessed directly from outside the class.
+    The class provides methods (deposit, withdraw, and get_balance) to interact with the __balance attribute in a controlled manner. The deposit and withdraw methods perform validation checks and update the __balance accordingly, while the get_balance method allows retrieving the current balance.
+    When you try to access the __balance attribute directly from outside the class (print(account.__balance)), it will raise an AttributeError because Python uses name mangling to make the attribute truly private.
+    By encapsulating the data and providing controlled access through methods, the BankAccount class ensures data integrity and prevents unauthorized modification of the __balance attribute. This allows the class to enforce its own rules and invariants, promoting code robustness and maintainability.
 
+# Polymorphism
 # Method Overloading - 
     # Method overloading refers to defining multiple methods in the same class with the same name but different parameters.
     # It allows a class to have multiple methods with the same name but different parameter types or a different number of parameters.
@@ -31,3 +41,16 @@
     Same Method Signature: In method overriding, the method in the subclass has the same signature (name and parameters) as the method in the superclass.
     Inheritance: Overriding methods are associated with inheritance, where a subclass inherits a method from its superclass and provides its own implementation.
     Run-Time Polymorphism: Method overriding is an example of run-time polymorphism (also known as dynamic polymorphism or late binding) because the decision about which method to call is made at runtime.
+    can also  use super in order to call method that is in super class.
+
+
+# Composition
+    Composition is a fundamental concept in Object-Oriented Programming (OOP) that describes a "has-a" relationship between objects. It allows complex objects to be composed of smaller, simpler objects, promoting code reusability, modularity, and flexibility.
+    In composition, one class (the container or composite class) contains instances of other classes (the contained or component classes) as its members. The composite class has full control over the lifetime of the component objects, meaning that when the composite object is created, it creates instances of the component objects, and when the composite object is destroyed, it also destroys the component objects.
+    It’s big confusing among most of the people that both the concepts are pointing to Code Reusability then what is the difference b/w Inheritance and Composition and when to use Inheritance and when to use Composition? 
+    Inheritance is used where a class wants to derive the nature of parent class and then modify or extend the functionality of it. Inheritance will extend the functionality with extra features allows overriding of methods, but in the case of Composition, we can only use that class we can not modify or extend the functionality of it. It will not provide extra features. Thus, when one needs to use the class as it without any modification, the composition is recommended and when one needs to change the behavior of the method in another class, then inheritance is recommended.
+    
+
+# Iterators # Generators
+# Abstraction
+    In the given code, if the stop method is included as an abstract method in the Vehicle abstract base class, it means that all concrete subclasses inheriting from Vehicle must provide an implementation for the stop method.
